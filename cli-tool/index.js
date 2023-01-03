@@ -18,10 +18,10 @@ async function welcome() {
     rainbowTitle.stop();
 
     console.log(`
-        ${chalk.bgBlue('HOW TO PLAY')}
-        I am a process on your pc.
-        If you get any question wrong I will be ${chalk.bgRed('Lost')}
-        Answer all the questions right........
+        ${chalk.bgBlue('HOW TO PLAY 🎮')}
+        1. Answer the random question in 50 seconds
+        If you were not able to give the correct answer in 50 seconds. You will be ${chalk.bgRed('Lost')}
+        If you were able to give the answer in 50 seconds, you can earn 5000$ in 50 seconds 😈
     `);
 }
 
@@ -29,9 +29,9 @@ async function askName() {
     const answers = await inquirer.prompt({
         name: 'player_name',
         type: 'input',
-        message: 'What is your name?',
+        message: 'Tell us your name?',
         default() {
-            return 'Player';
+            return 'Ex - Lahiru';
         },
     });
 
@@ -52,6 +52,7 @@ async function handleAnswer(isCorrect) {
 }
 
 function winner(){
+    //console is cleaning here after final text view
     console.clear();
     const msg = `Congrates , ${playerName} ! \n $1, 000, 000`;
 
